@@ -4,9 +4,10 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devour}}
-       
-    {{/unless}} 
+    {{#if devour}}
+       <li>{{burger_name}}
+         </li> 
+    {{/if}} 
   {{/each}}
 </ul>
 
@@ -15,7 +16,12 @@
 <ul>
   {{#each burgers}}
     <li>{{burger_name}}
-    <button class="devour" data-id="{{this.id}}">Devour!</button>
+
+       <form action="/{{this.id}}" method="POST">
+<button class="devour" data-id="{{this.id}}">Devour!</button>
+{{!-- <input type="submit" value="Submit"> --}}
+</form>
+    
     </li>
   {{/each}}
 </ul>

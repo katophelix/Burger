@@ -1,25 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-  // $(".change-sleep").on("click", function (event) {
-  //   var id = $(this).data("id");
-  //   var newSleep = $(this).data("newsleep");
-
-  //   var newSleepState = {
-  //     sleepy: newSleep
-  //   };
-
-  //   // Send the PUT request.
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "PUT",
-  //     data: newSleepState
-  //   }).then(
-  //     function () {
-  //       console.log("changed sleep to", newSleep);
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //     }
-  //   );
-  // });
+  //
 
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
@@ -44,6 +25,18 @@ $(function () {
       }
     );
   });
+
+//   $(".devour-burger").on("click", function(event) {
+// {/* <form action="/action_page.php">
+// First name: <input type="text" name="FirstName" value="Mickey"><br>
+// Last name: <input type="text" name="LastName" value="Mouse"><br>
+// <input type="submit" value="Submit">
+// </form>
+
+// <p>Click the "Submit" button and the form-data will be sent to a page on the server called "/action_page.php".</p> */}
+
+//         var id = $(this).data("id");
+  
 
   //   $(".delete-cat").on("click", function(event) {
   //     var id = $(this).data("id");
