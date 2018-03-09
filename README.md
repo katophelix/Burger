@@ -1,9 +1,9 @@
-### Burger
+# Burger - Eat a Burger
 
 ## Overview
 Burger is a web application designed to create and devour burgers.
 
-# Utilising
+### Utilising
 * Node.js
 * Express
 * Body-Parser
@@ -21,7 +21,7 @@ The user can then devour the burger by clicking the devour button underneath the
 ![List of burgers](public/assets/img/scrnprt.gif)
 
 
-Adding and devour burgers also updates the dtabase in mysql.
+Adding and devouring burgers also updates the database in mysql.
 
  This app is setup to listen on a Heroku default port.
 
