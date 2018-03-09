@@ -1,31 +1,41 @@
-<h1>Burgers!</h1>
 
-<h2>Burgers that are eaten!</h2>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Burgers to choose from!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devour}}
-       <li>{{burger_name}}
-         </li> 
-    {{/if}} 
-  {{/each}}
-</ul>
+    <ul>
+      {{#each burgers}} {{#unless devour}}
+      <li>{{burger_name}}
 
-<h2>Burgers to choose from!</h2>
+        <form action="/{{this.id}}" method="POST">
+          <button class="devour" data-id="{{this.id}}">Devour!</button>
+          {{!--
+          <input type="submit" value="Submit"> --}}
+        </form>
 
-<ul>
-  {{#each burgers}}
-    <li>{{burger_name}}
+      </li>
+      {{/unless}} 
+      {{/each}}
+    </ul>
 
-       <form action="/{{this.id}}" method="POST">
-<button class="devour" data-id="{{this.id}}">Devour!</button>
-{{!-- <input type="submit" value="Submit"> --}}
-</form>
-    
-    </li>
-  {{/each}}
-</ul>
+  </div>
 
+
+  <div class="col-md-6">
+    <h2>Burgers that are eaten!</h2>
+
+    <ul>
+      {{#each burgers}} {{#if devour}}
+      <li>{{burger_name}}
+      </li>
+      {{/if}} {{/each}}
+    </ul>
+  </div>
+</div>
+
+
+
+<footer>
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -34,11 +44,8 @@
     <input type="text" id="ca" name="burger_name">
   </div>
 
-  <div class="form-group">
-    <label for="devour">Hungry?</label><br>
-    <input type="radio" name="devour" value="1" checked> Hungry!<br>
-    <input type="radio" name="devour" value="0"> Full
-  </div>
+
 
   <button type="submit">Add Burger</button>
 </form>
+</footer>
